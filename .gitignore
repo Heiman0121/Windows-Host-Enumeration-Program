@@ -1,18 +1,39 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
 
-# Other files and folders
-.settings/
+echo "hostname:"
+hostname
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+echo "User of the machine:"
+Get-LocalUser
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+echo "Install Software:"
+Get-WmiObject -Class Win32_Product
+
+echo "OS Name, Architecture & Version:"
+
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type"
+
+echo "Proxy Configuration :"
+
+Get-ItemProperty -Path "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+
+echo "Saved & Recent Putty Sessions"
+
+Get-ItemProperty -Path Registry::HKCU\Software\SimonTatham\PuTTY\Sessions
+
+Get-ChildItem -Path Registry::HKCU\Software\SimonTatham\PuTTY\Sessions
+
+echo "Putty sshkey"
+
+Get-ItemProperty -Path Registry::HKCU\SoftWare\SimonTatham\PuTTY\SshHostKeys
+
+
+echo "Past RDP Session"
+
+Get-ItemProperty -Path 'Registry::HKCU\SoftWare\Microsoft\Terminal Server Client\Default'
+
+echo "Past run command:"
+
+Get-ItemProperty -Path Registry::HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+
+echo "Timeout in 20 sec"
+timeout /t 20
