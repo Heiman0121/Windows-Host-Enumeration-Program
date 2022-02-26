@@ -1,6 +1,6 @@
 # Windows-Host-Enumeration-Program
 Write A Windows Host Enumeration Program
-Here is the link show hows work
+Here is the link show hows working
 https://youtu.be/YoF_0ak07Is
 
 
