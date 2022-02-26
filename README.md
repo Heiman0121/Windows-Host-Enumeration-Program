@@ -1,7 +1,7 @@
 # Windows-Host-Enumeration-Program
 Write A Windows Host Enumeration Program
 
-Find the bottom requirement
+List:
 
 Hostname
 OS Name, Architecture & Version
